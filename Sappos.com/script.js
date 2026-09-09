@@ -11,9 +11,8 @@ const contadorFilmes = document.getElementById('contadorFilmes');
 // Guarda qual categoria está ativa (começa com 'todos')
 let categoriaAtiva = 'todos';
 
-// ============================================
+//-------------------------------------
 // FUNÇÃO PARA FILTRAR FILMES
-// ============================================
 
 // Essa função é chamada quando o usuário clica em um botão
 function filtrarFilmes(categoria) {
@@ -45,9 +44,8 @@ function filtrarFilmes(categoria) {
     atualizarContador(categoria, filmesVisiveis);
 }
 
-// ============================================
+// ----------------------------------------
 // FUNÇÃO PARA ATUALIZAR O CONTADOR
-// ============================================
 
 // Essa função atualiza o texto que mostra quantos filmes estão visíveis
 function atualizarContador(categoria, visiveis) {
@@ -69,9 +67,8 @@ function atualizarContador(categoria, visiveis) {
     }
 }
 
-// ============================================
+// -----------------------------------------
 // EVENTO DE CLIQUE NOS BOTÕES
-// ============================================
 
 // Para cada botão de filtro, adiciona um 'ouvinte' de clique
 botoesFiltro.forEach(botao => {
