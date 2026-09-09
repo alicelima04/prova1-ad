@@ -21,7 +21,7 @@ function filtrarFilmes(categoria) {
 
     // Percorre cada filme da galeria
     itensGaleria.forEach(item => {
-        // Pega a categoria que está no atributo 'data-categoria' do filme
+        // Pega a categoria do filme
         const categoriaItem = item.dataset.categoria;
         
         // Remove as classes de visibilidade que podem ter sido aplicadas antes
@@ -70,16 +70,16 @@ function atualizarContador(categoria, visiveis) {
 // -----------------------------------------
 // EVENTO DE CLIQUE NOS BOTÕES
 
-// Para cada botão de filtro, adiciona um 'ouvinte' de clique
+// Adiciona a função de clique
 botoesFiltro.forEach(botao => {
     botao.addEventListener('click', function() {
-        // Tira o destaque
+        // remove o 'active' de todos
         botoesFiltro.forEach(btn => btn.classList.remove('active'));
         
-        // Destaca o botão 
+        // ativa o clicado 
         this.classList.add('active');
         
-        // Pega a categoria que está no atributo 'data-categoria' do botão
+        // pega sua categoria e filtra os filmes
         const categoria = this.dataset.categoria;
         
         // Chama a função que filtra os filmes
