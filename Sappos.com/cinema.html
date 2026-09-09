@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sappos</title>
+   <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+    <div class="container">
+    <h1>🐸 Sapos.com</h1>
+        
+        <!-- FILTROS POR CATEGORIA -->
+        <div class="filtros-container">
+            <button class="filtro-btn active" data-categoria="todos">🎬 Todos</button>
+            <button class="filtro-btn" data-categoria="acao">🥊 Ação</button>
+            <button class="filtro-btn" data-categoria="terror">👻 Terror</button>
+            <button class="filtro-btn" data-categoria="ficcao">🚀 Ficção</button>
+            <button class="filtro-btn" data-categoria="animacao">🎨 Animação</button>
+        </div>
+
+        <div class="galeria" id="galeria">
+            
+    <!-- PULP FICTION (AÇÃO) -->
+    <!--categoria para filtrar como ação--> <div class="galeria-item" data-categoria="acao">
+    <!--link para imagem -->        <img src="https://imgs.search.brave.com/9NZ4xTT3bSaevOvW2qzrQy7D7eK5JfRktIJv6JTQIis/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91YXVw/b3N0ZXJzLmNvbS5i/ci9jZG4vc2hvcC9m/aWxlcy8wNDc2MjAx/NDA0MDgtcG9zdGVy/cy1maWxtZXMtcmV0/cm8tcHVscC1maWN0/aW9uLXRhcmFudGlu/by5qcGc_dj0xNzcy/NjQxMTI0JndpZHRo/PTQ4MA" alt="Pulp Fiction"> <!--descrição da imagem-->
+                                    <div class="legenda">Pulp Fiction</div>
+    <!--tag no rodape da imagem-->  <div class="categoria-tag">🥊 Ação</div>
+            </div>
+
+            <!-- AKIRA (ANIMAÇÃO) -->
+            <div class="galeria-item" data-categoria="animacao">
+                <img src="https://imgs.search.brave.com/0CeQPtE7vytxvs3GLF_ZQ4HH93iRGL6MYPNHL01yWKs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91YXVw/b3N0ZXJzLmNvbS5i/ci9jZG4vc2hvcC9m/aWxlcy8yODQ2MjAy/MjAyMjItdWF1LXBv/c3RlcnMtYWtpcmEt/ZmlsbWVzLmpwZz92/PTE3NzI2NTgxOTQm/d2lkdGg9NDgw" alt="Akira">
+                <div class="legenda">Akira</div>
+                <div class="categoria-tag">🎨 Animação</div>
+            </div>
+
+            <!-- SUPERMAN (FICÇÃO) -->
+            <div class="galeria-item" data-categoria="ficcao">
+                <img src="https://imgs.search.brave.com/OE6Asgx87O4A3nLCfXA4UyaCvJPBM_jkz5cG1JuTK7Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91YXVw/b3N0ZXJzLmNvbS5i/ci9jZG4vc2hvcC9m/aWxlcy8yOTcwMjAy/NTA1MjgtdWF1LXBv/c3RlcnMtc3VwZXJt/YW4tZmlsbWVzLTIu/anBnP3Y9MTc3MjY2/MDQ2OCZ3aWR0aD00/ODA" alt="Superman">
+                <div class="legenda">Superman</div>
+                <div class="categoria-tag">🚀 Ficção</div>
+            </div>
+
+            <!-- OUT OF SPACE (TERROR) -->
+            <div class="galeria-item" data-categoria="terror">
+                <img src="https://imgs.search.brave.com/nlnN1lH75lLVb-enXVRzCSSTjfRKce72_IQ_v7jATOg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mcmVl/Y2xhc3NpY2ltYWdl/cy5jb20vaW1hZ2Vz/LzIwLU1pbGxpb24t/TWlsZXMtVG8tRWFy/dGgtMDItbW92aWUt/cG9zdGVydG4uanBn" alt="Out of Space">
+                <div class="legenda">Out of Space</div>
+                <div class="categoria-tag">👻 Terror</div>
+            </div>
+
+            <!-- CLUBE DA LUTA (AÇÃO) -->
+            <div class="galeria-item" data-categoria="acao">
+                <img src="https://imgs.search.brave.com/AwCwWD-dqcf77dsTUoHT7Sb2etxSmFIY_uu6Lai-q7Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91YXVw/b3N0ZXJzLmNvbS5i/ci9jZG4vc2hvcC9m/aWxlcy8yMDE5MDYx/MzEzODYtdWF1LXBv/c3RlcnMtZmlsbWVz/LWFsdGVybmF0aXZv/LWNsdWJlLWRhLWx1/dGEtZmlnaHQtY2x1/Yi5qcGc_dj0xNzcy/NjUwMjMxJndpZHRo/PTQ4MA" alt="Clube da Luta">
+                <div class="legenda">Clube da Luta</div>
+                <div class="categoria-tag">🥊 Ação</div>
+            </div>
+
+            <!-- MENINU LOBU (ANIMAÇÃO) -->
+            <div class="galeria-item" data-categoria="animacao">
+                <img src="https://picsum.photos/seed/10/400/300" alt="Meninu Lobu">
+                <div class="legenda">Meninu Lobu</div>
+                <div class="categoria-tag">🎨 Animação</div>
+            </div>
+
+            <!-- DE VOLTA AO FUTURO (FICÇÃO) -->
+            <div class="galeria-item" data-categoria="ficcao">
+                <img src="https://imgs.search.brave.com/9EOpj2KuSl1Q3B3tR4nwPHSKUPgXqU4JidPgWsuoO9Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hY2Ru/LXVzLm1pdGllbmRh/bnViZS5jb20vc3Rv/cmVzLzAwNC82ODcv/NzQwL3Byb2R1Y3Rz/L3Bvcy0wMDQxNS1j/OWVjODBkOTUzOWUx/Y2ZmOWQxNzE4MTk5/NzEyNjMyMy00ODAt/MC53ZWJw" alt="De volta ao Futuro">
+                <div class="legenda">De volta ao Futuro</div>
+                <div class="categoria-tag">🚀 Ficção</div>
+            </div>
+
+            <!-- TORNADO BRABO (TERROR) -->
+            <div class="galeria-item" data-categoria="terror">
+                <img src="https://imgs.search.brave.com/HhOjofHw8LO_Tzp2VBRfowzh4wPe2TLuON8VyGL4xHg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/b3JpZ2luYWxmaWxt/YXJ0LmNvbS9jZG4v/c2hvcC9maWxlcy90/d2lzdGVyXzE5OTZf/b3JpZ2luYWxfZmls/bV9hcnRfYV9jMDlh/MjRmMS05ZGU2LTRh/YWYtYjY5OC1iYjM5/ZjZmMTdlYzUud2Vi/cD92PTE3MDkxNjIw/MDcmd2lkdGg9MTYw/MA" alt="Tornado Brabo">
+                <div class="legenda">Tornado Brabo</div>
+                <div class="categoria-tag">👻 Terror</div>
+            </div>
+
+            <!-- KILL BILL (AÇÃO) -->
+            <div class="galeria-item" data-categoria="acao">
+                <img src="https://imgs.search.brave.com/ScgoktC9ck4aDj8p3UHOUTTcsEnCJXa9u37hIHULTAw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZXVyb3Bvc3RlcnMu/ZXUvaW1hZ2UvMzUw/L3Bvc3RlcnMva2ls/bC1iaWxsLXVtYS10/aHVybWFuLWkyMDc0/NzQuanBn" alt="Kill Bill">
+                <div class="legenda">Kill Bill</div>
+                <div class="categoria-tag">🥊 Ação</div>
+            </div>
+
+            <!-- BATMAN (AÇÃO) -->
+            <div class="galeria-item" data-categoria="acao">
+                <img src="https://imgs.search.brave.com/Fkyea-N5Bdk3f-mqGtjCZDYlwlRbkzAxOUF8A-k-BfA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZXVyb3Bvc3RlcnMu/ZXUvaW1hZ2UvMzUw/L3Bvc3RlcnMvdGhl/LWJhdG1hbi0yMDIy/LWkxMjIxMjcuanBn" alt="Batman">
+                <div class="legenda">Batman</div>
+                <div class="categoria-tag">🥊 Ação</div>
+            </div>
+
+        </div>
+
+        <!-- CONTADOR -->
+        <div class="contador-container">
+            <span id="contadorFilmes">🎬 10 filmes disponíveis</span>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <p class="copyright">© 2026 Sappos Filmes - Todos os direitos reservados</p>
+        <p class="dev">🍿 A paixão pelo cinema em um só lugar</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
