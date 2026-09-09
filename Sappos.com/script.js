@@ -1,11 +1,11 @@
 
-// Pega todos os botões de filtro (todos os <button> com classe 'filtro-btn')
+// Busca e guarda na variável todos os botões da página.
 const botoesFiltro = document.querySelectorAll('.filtro-btn');
 
-// Pega todos os itens da galeria (cada filme)
+// Pega e guarda todos os itens da galeria (cada filme)
 const itensGaleria = document.querySelectorAll('.galeria-item');
 
-// Pega o elemento que mostra o contador de filmes
+// Pega e guarda o elemento que mostra o contador de filmes
 const contadorFilmes = document.getElementById('contadorFilmes');
 
 // Guarda qual categoria está ativa (começa com 'todos')
@@ -28,7 +28,6 @@ function filtrarFilmes(categoria) {
         item.classList.remove('visivel', 'oculto');
         
         // Verifica se o filme pertence à categoria selecionada
-        // Se for 'todos' ou se a categoria do filme for igual à selecionada
         if (categoria === 'todos' || categoriaItem === categoria) {
             item.classList.add('visivel'); // Mostra o filme
             filmesVisiveis++; // Aumenta o contador
