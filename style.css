@@ -1,86 +1,182 @@
-// Busca e guarda na variável todos os botões da página.
-const botoesFiltro = document.querySelectorAll('.filtro-btn');
-
-// Pega e guarda todos os itens da galeria (cada filme)
-const itensGaleria = document.querySelectorAll('.galeria-item');
-
-// Pega e guarda o elemento que mostra o contador de filmes
-const contadorFilmes = document.getElementById('contadorFilmes');
-
-// Guarda qual categoria está ativa (começa com 'todos')
-let categoriaAtiva = 'todos';
-
-//-------------------------------------
-// FUNÇÃO PARA FILTRAR FILMES
-
-// Essa função é chamada quando o usuário clica em um botão
-function filtrarFilmes(categoria) {
-    categoriaAtiva = categoria; // Atualiza a categoria ativa
-    let filmesVisiveis = 0; // Contador de filmes que vão aparecer
-
-    // Percorre cada filme da galeria
-    itensGaleria.forEach(item => {
-        // Pega a categoria do filme
-        const categoriaItem = item.dataset.categoria;
-        
-        // Remove as classes de visibilidade que podem ter sido aplicadas antes
-        item.classList.remove('visivel', 'oculto');
-        
-        // Verifica se o filme pertence à categoria selecionada
-        if (categoria === 'todos' || categoriaItem === categoria) {
-            item.classList.add('visivel'); // Mostra o filme
-            filmesVisiveis++; // Aumenta o contador
-            
-            // Adiciona um pequeno atraso para cada filme aparecer em sequência (efeito cascata)
-            item.style.animationDelay = `${(filmesVisiveis - 1) * 0.05}s`;
-        } else {
-            item.classList.add('oculto'); // Esconde o filme
-        }
-    });
-
-    // Atualiza o contador na tela
-    atualizarContador(categoria, filmesVisiveis);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// ----------------------------------------
-// FUNÇÃO PARA ATUALIZAR O CONTADOR
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #2e2e2e;
+}
 
-// Essa função atualiza o texto que mostra quantos filmes estão visíveis
-function atualizarContador(categoria, visiveis) {
-    const total = itensGaleria.length; // Total de filmes (10)
-    
-    if (categoria === 'todos') {
-        // Se está mostrando todos, mostra o total
-        contadorFilmes.textContent = `🎬 ${total} filmes disponíveis`;
-    } else {
-        // Se está filtrado, mostra quantos filmes daquela categoria
-        const nomeCategoria = {
-            'acao': 'Ação',
-            'terror': 'Terror',
-            'ficcao': 'Ficção',
-            'drama': 'Drama',
-            'animacao': 'Animação'
-        };
-        contadorFilmes.textContent = `🎯 ${visiveis} filme(s) de ${nomeCategoria[categoria]}`;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #f5c842;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.galeria-item {
+    background: rgba(196, 196, 196, 0.288);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.galeria-item:hover {
+    transform: scale(0.90);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: fill;
+    display: block;
+}
+
+.galeria-item .legenda {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    text-shadow: -1px 3px 2px black;
+    color: white;
+}
+
+.filtros-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 35px;
+    padding: 10px;
+}
+
+.filtro-btn {
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ccc;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.filtro-btn:hover {
+    background: rgba(245, 200, 66, 0.2);
+    border-color: #f5c842;
+    color: #f5c842;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(245, 200, 66, 0.2);
+}
+
+.filtro-btn.active {
+    background: #f5c842;
+    color: #2e2e2e;
+    border-color: #f5c842;
+    box-shadow: 0 5px 20px rgba(245, 200, 66, 0.3);
+}
+
+.categoria-tag {
+    position: absolute;
+    bottom: 45px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #f5c842;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(245, 200, 66, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.contador-container {
+    text-align: center;
+    margin: 30px 0 10px;
+    color: #f5c842;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.galeria-item.oculto {
+    display: none;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.galeria-item.visivel {
+    display: block;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
-// -----------------------------------------
-// EVENTO DE CLIQUE NOS BOTÕES
+.rodape {
+    margin-top: 40px;
+    padding: 25px 20px;
+    background: #061f3d;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+}
 
-// Adiciona a função de clique
-botoesFiltro.forEach(botao => {
-    botao.addEventListener('click', function() {
-        // remove o 'active' de todos
-        botoesFiltro.forEach(btn => btn.classList.remove('active'));
-        
-        // ativa o clicado 
-        this.classList.add('active');
-        
-        // pega sua categoria e filtra os filmes
-        const categoria = this.dataset.categoria;
-        
-        // Chama a função que filtra os filmes
-        filtrarFilmes(categoria);
-    });
-});
+@media (max-width: 900px) {
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filtros-container {
+        gap: 8px;
+    }
+
+    .filtro-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .categoria-tag {
+        font-size: 9px;
+        padding: 3px 10px;
+        bottom: 38px;
+        right: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+}
