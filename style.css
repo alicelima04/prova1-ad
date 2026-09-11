@@ -1,180 +1,217 @@
+/* RESET BÁSICO */
+/* Remove margens e preenchimentos padrão do navegador para tudo ficar igual */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Faz as bordas contarem no tamanho total dos elementos */
 }
 
+/* CORPO DA PÁGINA */
+/* Define o estilo geral de fundo e fonte */
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #2e2e2e;
+    font-family: Arial, sans-serif; /* Fonte simples e legível */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #2e2e2e; /* Fundo cinza escuro */
 }
 
+/* CONTAINER PRINCIPAL */
+/* Centraliza o conteúdo e define largura máxima */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; /* Não deixa a página ficar muito larga */
+    margin: 0 auto; /* Centraliza horizontalmente */
 }
 
+/* TÍTULO */
+/* Deixa o título bonito e centralizado */
 h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #f5c842;
+    text-align: center; /* Centraliza */
+    margin-bottom: 30px; /* Espaço embaixo */
+    color: #f5c842; /* Cor amarela dourada */
 }
 
+/* GALERIA DE FILMES */
+/* Organiza os filmes em uma grade de 4 colunas */
 .galeria {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    display: grid; /* Usa grid layout */
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas de tamanho igual */
+    gap: 40px; /* Espaço entre os filmes */
 }
 
+/* CADA FILME */
+/* Estiliza o bloco de cada filme */
 .galeria-item {
-    background: rgba(196, 196, 196, 0.288);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
+    background: rgba(196, 196, 196, 0.288); /* Fundo transparente esbranquiçado */
+    border-radius: 8px; /* Cantos arredondados */
+    overflow: hidden; /* Esconde o que passar da borda */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animação suave ao passar o mouse */
+    position: relative; /* Permite posicionar elementos dentro (como a etiqueta) */
 }
 
+/* EFEITO AO PASSAR O MOUSE */
+/* Quando o mouse passa em cima, o filme diminui um pouco */
 .galeria-item:hover {
-    transform: scale(0.90);
+    transform: scale(0.90); /* Diminui para 90% do tamanho */
 }
 
+/* IMAGENS DOS FILMES */
 .galeria-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: fill;
-    display: block;
+    width: 100%; /* Ocupa toda a largura do bloco */
+    height: 300px; /* Altura fixa */
+    object-fit: fill; /* Estica a imagem para preencher */
+    display: block; /* Remove espaço extra embaixo */
 }
 
+/* NOME DO FILME */
+/* Estiliza o texto embaixo da imagem */
 .galeria-item .legenda {
-    padding: 12px;
-    text-align: center;
-    font-size: 14px;
-    text-shadow: -1px 3px 2px black;
-    color: white;
+    padding: 12px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    font-size: 14px; /* Tamanho da fonte */
+    text-shadow: -1px 3px 2px black; /* Sombra preta no texto para destacar */
+    color: white; /* Texto branco */
 }
 
+/* BOTÕES DE FILTRO */
+/* Estiliza a barra de botões de categoria */
 .filtros-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 35px;
-    padding: 10px;
+    display: flex; /* Coloca os botões em linha */
+    flex-wrap: wrap; /* Quebra linha se não couber */
+    justify-content: center; /* Centraliza os botões */
+    gap: 12px; /* Espaço entre botões */
+    margin-bottom: 35px; /* Espaço abaixo */
+    padding: 10px; /* Espaçamento interno */
 }
 
+/* CADA BOTÃO */
 .filtro-btn {
-    padding: 10px 25px;
-    background: rgba(255, 255, 255, 0.08);
-    color: #ccc;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    cursor: pointer;
+    padding: 10px 25px; /* Espaçamento interno */
+    background: rgba(255, 255, 255, 0.08); /* Fundo transparente */
+    color: #ccc; /* Texto cinza claro */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+    border-radius: 30px; /* Botão bem arredondado */
+    cursor: pointer; /* Mãozinha ao passar o mouse */
     font-size: 15px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    font-weight: 600; /* Texto em negrito */
+    transition: all 0.3s ease; /* Animação suave */
+    letter-spacing: 0.5px; /* Espaço entre letras */
+    text-transform: uppercase; /* Tudo em maiúsculo */
 }
 
+/* BOTÃO AO PASSAR O MOUSE */
 .filtro-btn:hover {
-    background: rgba(245, 200, 66, 0.2);
-    border-color: #f5c842;
-    color: #f5c842;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(245, 200, 66, 0.2);
+    background: rgba(245, 200, 66, 0.2); /* Fundo amarelo transparente */
+    border-color: #f5c842; /* Borda amarela */
+    color: #f5c842; /* Texto amarelo */
+    transform: translateY(-3px); /* Sobe um pouco */
+    box-shadow: 0 5px 15px rgba(245, 200, 66, 0.2); /* Sombra amarela */
 }
 
+/* BOTÃO ATIVO (SELECIONADO) */
 .filtro-btn.active {
-    background: #f5c842;
-    color: #2e2e2e;
-    border-color: #f5c842;
-    box-shadow: 0 5px 20px rgba(245, 200, 66, 0.3);
+    background: #f5c842; /* Fundo amarelo */
+    color: #2e2e2e; /* Texto escuro */
+    border-color: #f5c842; /* Borda amarela */
+    box-shadow: 0 5px 20px rgba(245, 200, 66, 0.3); /* Sombra mais forte */
 }
 
+/* ETIQUETA DE CATEGORIA */
+/* É aquela "bolinha" que aparece no canto da imagem */
 .categoria-tag {
-    position: absolute;
-    bottom: 45px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #f5c842;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: bold;
+    position: absolute; /* Fica fixa dentro do bloco do filme */
+    bottom: 45px; /* Distância do fundo */
+    right: 10px; /* Distância da direita */
+    background: rgba(0, 0, 0, 0.8); /* Fundo preto transparente */
+    color: #f5c842; /* Texto amarelo */
+    padding: 4px 12px; /* Espaçamento interno */
+    border-radius: 20px; /* Bem arredondado */
+    font-size: 11px; /* Texto pequeno */
+    font-weight: bold; /* Negrito */
     letter-spacing: 0.5px;
-    border: 1px solid rgba(245, 200, 66, 0.3);
-    backdrop-filter: blur(5px);
+    border: 1px solid rgba(245, 200, 66, 0.3); /* Borda amarela fraca */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
 }
 
+/* CONTADOR DE FILMES */
 .contador-container {
     text-align: center;
     margin: 30px 0 10px;
-    color: #f5c842;
+    color: #f5c842; /* Texto amarelo */
     font-size: 16px;
     font-weight: 500;
 }
 
+/* ESTILOS PARA FILTRAR */
+/* Quando o filme está oculto (não aparece) */
 .galeria-item.oculto {
-    display: none;
-    opacity: 0;
-    transform: scale(0.8);
+    display: none; /* Some da tela */
+    opacity: 0; /* Fica transparente */
+    transform: scale(0.8); /* Diminui */
 }
 
+/* Quando o filme está visível (aparece com animação) */
 .galeria-item.visivel {
-    display: block;
-    animation: fadeInUp 0.5s ease forwards;
+    display: block; /* Volta a aparecer */
+    animation: fadeInUp 0.5s ease forwards; /* Animação de entrada */
 }
 
+/* ANIMAÇÃO DE ENTRADA */
+/* Faz os filmes aparecerem de baixo para cima */
 @keyframes fadeInUp {
     from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.9);
+        opacity: 0; /* Começa transparente */
+        transform: translateY(30px) scale(0.9); /* Vem de baixo e menor */
     }
     to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+        opacity: 1; /* Termina visível */
+        transform: translateY(0) scale(1); /* Na posição normal */
     }
 }
 
+/* RODAPÉ */
 .rodape {
     margin-top: 40px;
     padding: 25px 20px;
-    background: #061f3d;
+    background: #061f3d; /* Fundo azul escuro */
     color: white;
     text-align: center;
     border-radius: 15px;
 }
 
+/* RESPONSIVIDADE */
+/* Adapta o site para telas menores (celulares e tablets) */
+
+/* Telas médias (tablets) - 3 colunas */
 @media (max-width: 900px) {
     .galeria {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
+/* Telas pequenas (celulares grandes) - 2 colunas */
 @media (max-width: 600px) {
     .galeria {
         grid-template-columns: repeat(2, 1fr);
     }
-
+    
     .filtros-container {
-        gap: 8px;
+        gap: 8px; /* Menos espaço entre botões */
     }
-
+    
     .filtro-btn {
-        padding: 8px 16px;
+        padding: 8px 16px; /* Botões menores */
         font-size: 12px;
     }
-
+    
     .categoria-tag {
-        font-size: 9px;
+        font-size: 9px; /* Etiqueta menor */
         padding: 3px 10px;
         bottom: 38px;
         right: 6px;
     }
 }
 
+/* Telas muito pequenas - 1 coluna */
 @media (max-width: 400px) {
     .galeria {
         grid-template-columns: 1fr;
